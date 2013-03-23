@@ -19,7 +19,7 @@ int main() {
         ++Turn;
         Stones = Stones - GCD((Turn % 2) ?  First : Second , Stones);
     }
-    printf((Turn % 2) ? "1" : "0");
+    printf((Turn % 2) ? "1" : "0"); 
 
 return 0;
 }
