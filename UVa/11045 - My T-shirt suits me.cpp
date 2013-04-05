@@ -42,22 +42,22 @@ int Shirt(char *C) {
     if(strcmp(C, "XS") == 0)      return 5;
 }
 
-inline void Solve(int Index) {
-    if(Index == Voulnters) { 
+inline void Solve(int Person) {
+    if(Person == Voulnters) { 
         OK = true;
         return;
     }
     if(OK == true) return;
-    int T_shirt_for_first = Shirt(Volunter[Index].First);
-    int T_shirt_for_second = Shirt(Volunter[Index].Second);
+    int T_shirt_for_first = Shirt(Volunter[Person].First);
+    int T_shirt_for_second = Shirt(Volunter[Person].Second);
     if(Available[T_shirt_for_first]) {
         Available[T_shirt_for_first]--;
-        Solve(Index + 1);
+        Solve(Person + 1);
         Available[T_shirt_for_first]++;
     }
     if(Available[T_shirt_for_second]) {
         Available[T_shirt_for_second]--;
-        Solve(Index + 1);
+        Solve(Person + 1);
         Available[T_shirt_for_second]++;
     }
 }
