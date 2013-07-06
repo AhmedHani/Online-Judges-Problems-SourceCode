@@ -27,14 +27,14 @@ using namespace std;
 int First, Second, Index, Root, RootCounter;
 map<int, int> ConatinerMap;
 map<int, int> InDegree;
-vector<int> Matrix[Max];
+vector<int> AdjList[Max];
 bool Visited[Max];
 
 void DFS(int X){
     Visited[X] = true;
     
-    FOR(i, Matrix[X].size()){
-        if(Visited[Matrix[X][i]] == false )
+    FOR(i, AdjList[X].size()){
+        if(Visited[AdjList[X][i]] == false )
             DFS(Matrix[X][i]);
     }
 }
@@ -53,7 +53,7 @@ int main(int argc, char** argv) {
         Index = 1;
         ConatinerMap[First]  = Index++;         ConatinerMap[Second] = Index++;
         
-        Matrix[ConatinerMap[First]].push_back(ConatinerMap[Second]);
+        AdjList[ConatinerMap[First]].push_back(ConatinerMap[Second]);
         InDegree[ConatinerMap[First]]  = InDegree[ConatinerMap[Second]] = NULL;
         InDegree[ConatinerMap[Second]]++; 
         
@@ -67,7 +67,7 @@ int main(int argc, char** argv) {
                 ConatinerMap[Second] = Index++;
                 InDegree[ConatinerMap[Second]] = NULL;
             }
-            Matrix[ConatinerMap[First]].push_back(ConatinerMap[Second]);
+            AdjList[ConatinerMap[First]].push_back(ConatinerMap[Second]);
             InDegree[ConatinerMap[Second]]++;
         }
         RootCounter = NULL;
