@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
         if ( First < NULL && Second < NULL )    break;
         ConatinerMap.clear();
         InDegree.clear();
-        memset(Matrix, NULL, sizeof(Matrix));
+        memset(AdjList, NULL, sizeof(AdjList));
         memset(Visited, false, sizeof(Visited));
         
         Index = 1;
