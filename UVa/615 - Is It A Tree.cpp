@@ -35,7 +35,7 @@ void DFS(int X){
     
     FOR(i, AdjList[X].size()){
         if(Visited[AdjList[X][i]] == false )
-            DFS(Matrix[X][i]);
+            DFS(AdjList[X][i]);
     }
 }
 
