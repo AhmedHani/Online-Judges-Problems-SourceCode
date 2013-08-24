@@ -15,7 +15,7 @@
 #define Max 26
 #define INF 1000000000
 //#define INT_MAX 2147483647
-#define FOR(i , Case) for(int i = 0; i < Case; i++)
+#define FOR(i, Case) for(int i = 0; i < Case; i++)
 
 using namespace std;
 
@@ -56,9 +56,9 @@ int main(int argc, char** argv) {
           
           FOR(i, Max) DistanceY[i][i] = 0, DistanceM[i][i] = 0;
           
-          FOR(k, Max){
-              FOR(i, Max){
-                  FOR(j, Max){
+          FOR(k, Max) {
+              FOR(i, Max) {
+                  FOR(j, Max) {
                       DistanceY[i][j] = min(DistanceY[i][j], DistanceY[i][k] + DistanceY[k][j]);  
                       DistanceM[i][j] = min(DistanceM[i][j], DistanceM[i][k] + DistanceM[k][j]);
                   }
@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
           int YY = First - 'A';
           int MM = Second - 'A';
           Result Answer; 
-          FOR(i , Max) {
+          FOR(i, Max) {
               if(DistanceY[YY][i] == INF || DistanceM[MM][i] == INF) continue;
               if(DistanceY[YY][i] +  DistanceM[MM][i] < Answer.Distance) {
                       Answer.Energy = i;
