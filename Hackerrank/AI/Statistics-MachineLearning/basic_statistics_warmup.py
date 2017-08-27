@@ -16,8 +16,8 @@ print(round(mean, 1))
 median = sorted_array[len(sorted_array) / 2] if len(sorted_array) % 2 != 0 else (sorted_array[int(len(sorted_array) / 2)] + sorted_array[int(len(sorted_array) / 2) - 1]) / 2
 print(round(median, 1))
 
-max_freq_tuple = list(Counter(array).items())[0]
-smallest_freq_element, freq = max_freq_tuple
+freq = Counter(array)[max(Counter(array), key=Counter(array).get)]
+smallest_freq_element = 1000000
 
 for item in Counter(array).items():
     if item[1] == freq:
