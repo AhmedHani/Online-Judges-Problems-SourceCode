@@ -2,7 +2,6 @@
 
 import sys
 
-pure = ""
 
 def super_reduced_string(s):
     i = 1

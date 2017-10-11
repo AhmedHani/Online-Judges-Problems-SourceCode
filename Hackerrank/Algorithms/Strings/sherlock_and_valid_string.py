@@ -1,16 +1,14 @@
 import string
 import sys
 import copy as cp
-
 from collections import Counter
-
 
 
 def isValid(s):
     s = list(s)
     unique_chars = list(set(s))
     is_valid = len(set(list(Counter(s).values()))) == 1
-    #print Counter(s)
+    print(Counter(s))
 
     if is_valid:
         return "YES"
@@ -26,7 +24,7 @@ def isValid(s):
 
     return "NO"
 
-s = raw_input().strip()
+s = input().strip()
 result = isValid(s)
 
 print(result)

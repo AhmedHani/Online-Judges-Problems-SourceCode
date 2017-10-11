@@ -1,8 +1,8 @@
 import sys
 
 
-s1 = raw_input().strip()
-s2 = raw_input().strip()
+s1 = input().strip()
+s2 = input().strip()
 n = len(s1)
 m = len(s2)
 
@@ -19,7 +19,7 @@ for i in range(0, n + 1):
         else:
             memo[i][j] = max(memo[i - 1][j], memo[i][j - 1])
 
-print memo[n][m]
+print(memo[n][m])
 """
 def lcs(s1, s2, n, m, memo):
     if n == 0 or m == 0:

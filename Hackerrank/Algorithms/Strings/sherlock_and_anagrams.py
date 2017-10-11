@@ -1,6 +1,4 @@
-#!/bin/python
 
-import sys
 
 def sherlockAndAnagrams(s):
     num_of_anagrams = 0
@@ -22,10 +20,10 @@ def sherlockAndAnagrams(s):
 
     return num_of_anagrams
 
-q = int(raw_input().strip())
+q = int(input().strip())
 
-for a0 in xrange(q):
-    s = raw_input().strip()
+for a0 in range(q):
+    s = input().strip()
     result = sherlockAndAnagrams(s)
 
     print(result)
